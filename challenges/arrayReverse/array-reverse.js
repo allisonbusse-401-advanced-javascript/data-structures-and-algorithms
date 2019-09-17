@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 function reverseArray(arr) {
   let array = [];
   let index = 0;
