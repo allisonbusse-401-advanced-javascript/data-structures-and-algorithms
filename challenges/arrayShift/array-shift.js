@@ -28,5 +28,4 @@ function removeShiftArray(arr) {
 
 module.exports = {
   insertShiftArray, 
-  removeShiftArray
-}
+  removeShiftArray};
