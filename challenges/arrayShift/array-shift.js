@@ -25,10 +25,6 @@ function removeShiftArray(arr) {
   return newArr;
 }
 
-const arr = [2,4,6,8];
-
-console.log(removeShiftArray(arr))
-
 
 module.exports = {
   insertShiftArray, 
