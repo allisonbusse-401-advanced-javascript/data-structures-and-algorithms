@@ -58,4 +58,21 @@ describe('Linked List', () => {
     list.insert(valueThree);
     expect(list.toString()).toBe('nohello5');
   });
+
+  it('adds a node to the end of a list', () => {
+    const list = new linkedListModel.LinkedList();
+    const value = 'abbey';
+    const valueOne = 6;
+    const valueTwo = 'hello';
+    const valueThree = 'no';
+    list.insert(valueOne);
+    list.insert(valueTwo);
+    list.insert(valueThree);
+    list.append(value);
+    expect(list.size).toBe(4);
+    expect(list.head.next.next.next.value).toBe('abbey');
+
+    console.log(list.insertBefore())
+  });
 });
+
