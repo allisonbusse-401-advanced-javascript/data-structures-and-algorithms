@@ -72,7 +72,6 @@ class LinkedList {
       this.head = node;
     } else if(this.head.value === value) {
       node.next = this.head;
-      // this.head.next = this.head;
       this.head = node;
       this.size++;
       return node;
@@ -97,6 +96,25 @@ class LinkedList {
     node.next = currentNode.next;
     currentNode.next = node;
     this.size++;
+  }
+
+  kthFromEnd(k) {
+    const exception = 'exception';
+    let count = 0;
+    let currentNode = this.head;
+    if(k > this.size || k < 0 || typeof k !== 'number') {
+      return exception;
+    } else if(k === this.size) {
+      while(currentNode.next) {
+        currentNode = currentNode.next;
+      }
+      return currentNode.value;
+    }
+    while(this.size - k !== count + 1 && currentNode.next !== null) {
+      currentNode = currentNode.next;
+      count++;
+    }
+    return currentNode.value;
   }
 }
 

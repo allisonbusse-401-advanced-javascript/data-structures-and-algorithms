@@ -154,6 +154,68 @@ describe('Linked List', () => {
     expect(list.includes('goodbye')).toBe(true);
   });
 
+  it('tests where k is greater than the length of list', () => {
+    const list = new linkedListModel.LinkedList();
+    const value = 'abbey';
+    const valueOne = 6;
+    const valueTwo = 'hello';
+    const valueThree = 'no';
+    list.insert(valueOne);
+    list.insert(valueTwo);
+    list.insert(valueThree);
+    list.append(value);
+    expect(list.kthFromEnd(6)).toBe('exception');
+  });
+
+  it('tests where k is equal to the length of list', () => {
+    const list = new linkedListModel.LinkedList();
+    const value = 'abbey';
+    const valueOne = 6;
+    const valueTwo = 'hello';
+    const valueThree = 'no';
+    list.insert(valueOne);
+    list.insert(valueTwo);
+    list.insert(valueThree);
+    list.append(value);
+    expect(list.kthFromEnd(4)).toBe('abbey');
+  });
+
+  it('tests where k is not a positive integer', () => {
+    const list = new linkedListModel.LinkedList();
+    const value = 'abbey';
+    const valueOne = 6;
+    const valueTwo = 'hello';
+    const valueThree = 'no';
+    list.insert(valueOne);
+    list.insert(valueTwo);
+    list.insert(valueThree);
+    list.append(value);
+    expect(list.kthFromEnd(-5)).toBe('exception');
+    expect(list.kthFromEnd('test')).toBe('exception');
+  });
+
+  it('tests where the linked list is a length of 1', () => {
+    const list = new linkedListModel.LinkedList();
+    const valueOne = 6;
+    list.insert(valueOne);
+    expect(list.kthFromEnd(1)).toBe(6);
+    expect(list.kthFromEnd(0)).toBe(6);
+  });
+
+  it('tests where k is not at the end, but somewhere in the middle of the linked list', () => {
+    const list = new linkedListModel.LinkedList();
+    const value = 'abbey';
+    const valueOne = 6;
+    const valueTwo = 'hello';
+    const valueThree = 'no';
+    list.insert(valueOne);
+    list.insert(valueTwo);
+    list.insert(valueThree);
+    list.append(value);
+    expect(list.kthFromEnd(2)).toBe('hello');
+    expect(list.kthFromEnd(3)).toBe('no');
+  });
+
 
 
 });
