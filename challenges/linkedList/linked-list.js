@@ -102,14 +102,9 @@ class LinkedList {
     const exception = 'exception';
     let count = 0;
     let currentNode = this.head;
-    if(k > this.size || k < 0 || typeof k !== 'number') {
+    if(k >= this.size || k < 0 || typeof k !== 'number') {
       return exception;
-    } else if(k === this.size) {
-      while(currentNode.next) {
-        currentNode = currentNode.next;
-      }
-      return currentNode.value;
-    }
+    } 
     while(this.size - k !== count + 1 && currentNode.next !== null) {
       currentNode = currentNode.next;
       count++;

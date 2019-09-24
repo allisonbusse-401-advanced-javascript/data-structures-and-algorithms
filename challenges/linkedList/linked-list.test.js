@@ -177,7 +177,7 @@ describe('Linked List', () => {
     list.insert(valueTwo);
     list.insert(valueThree);
     list.append(value);
-    expect(list.kthFromEnd(4)).toBe('abbey');
+    expect(list.kthFromEnd(4)).toBe('exception');
   });
 
   it('tests where k is not a positive integer', () => {
@@ -198,7 +198,7 @@ describe('Linked List', () => {
     const list = new linkedListModel.LinkedList();
     const valueOne = 6;
     list.insert(valueOne);
-    expect(list.kthFromEnd(1)).toBe(6);
+    expect(list.kthFromEnd(1)).toBe('exception');
     expect(list.kthFromEnd(0)).toBe(6);
   });
 
