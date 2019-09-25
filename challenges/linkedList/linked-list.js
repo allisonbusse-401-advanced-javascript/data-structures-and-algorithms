@@ -56,13 +56,17 @@ class LinkedList {
    */
   append(value) {
     const node = new Node(value);
- 
-    let currentNode = this.head;
-    while(currentNode.next) {
-      currentNode = currentNode.next;
+    if(this.head === null) {
+      this.head = node;
     }
-    currentNode.next = node;
-    this.size++;
+    else {
+      let currentNode = this.head;
+      while(currentNode.next) {
+        currentNode = currentNode.next;
+      }
+      currentNode.next = node;
+      this.size++;
+    }
   }
 
   insertBefore(value, newVal) {
@@ -100,12 +104,12 @@ class LinkedList {
 
   kthFromEnd(k) {
     const exception = 'exception';
-    let count = 0;
+    let count = 1;
     let currentNode = this.head;
     if(k >= this.size || k < 0 || typeof k !== 'number') {
       return exception;
     } 
-    while(this.size - k !== count + 1 && currentNode.next !== null) {
+    while(this.size - k !== count && currentNode.next !== null) {
       currentNode = currentNode.next;
       count++;
     }
