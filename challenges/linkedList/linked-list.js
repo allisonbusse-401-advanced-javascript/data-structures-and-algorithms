@@ -45,10 +45,11 @@ class LinkedList {
   toString() {
     let string = '';
     let currentNode = this.head;
-    for(let i = 0; i < this.size; i++) {
+    while(currentNode.next) {
       string = string + currentNode.value;
       currentNode = currentNode.next;
-    } return string;
+    } string = string + currentNode.value;
+    return string;
   }
 
   /**

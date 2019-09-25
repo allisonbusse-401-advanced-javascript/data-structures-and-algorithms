@@ -36,11 +36,10 @@ function mergeLists(list1, list2) {
     newList.append(currentTwo.value);
     currentTwo = currentTwo.next;
   }
-  newList.append(currentTwo.value);
   newList.append(currentOne.value);
+  newList.append(currentTwo.value);
   
   
-  console.log(newList.toString());
   return newList.head;
 }
 

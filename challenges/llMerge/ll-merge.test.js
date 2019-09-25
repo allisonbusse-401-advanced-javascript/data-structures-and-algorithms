@@ -1,26 +1,26 @@
 const mergeLists = require('./ll-merge');
-const linkedListModel = require('./linked-list');
+const linkedListModel = require('../linkedList/linked-list');
 
 
 describe('Merge Lists', () => {
   it('merges two lists of the same size', () => {
     const list1 = new linkedListModel.LinkedList();
-    const valueOne = 5;
-    const valueTwo = 'hello';
-    const valueThree = 'no';
-    list1.insert(valueOne);
-    list1.insert(valueTwo);
-    list1.insert(valueThree);
+    list1.insert(5);
+    list1.insert('hello');
+    list1.insert('no');
 
     const list2 = new linkedListModel.LinkedList();
-    const valueFour = 8;
-    const valueFive = 'goodbye';
-    const valueSix = 'yes';
-    list2.insert(valueFour);
-    list2.insert(valueFive);
-    list2.insert(valueSix);
+    list2.insert(8);
+    list2.insert('goodbye');
+    list2.insert('yes');
     list2.insert('alex');
-    mergeLists(list1, list2);
-    expect(l)
+    const result = mergeLists(list1, list2);
+    expect(result.value).toBe('no');
+    expect(result.next.value).toBe('alex');
+    expect(result.next.next.value).toBe('hello');
+    expect(result.next.next.next.value).toBe('yes');
+    expect(result.next.next.next.next.value).toBe('goodbye');
+    expect(result.next.next.next.next.next.value).toBe(5);
+    expect(result.next.next.next.next.next.next.value).toBe(8);
   });
 });
