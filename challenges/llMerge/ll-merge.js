@@ -28,18 +28,28 @@ function mergeLists(list1, list2) {
     currentOne = currentOne.next;
     currentTwo = currentTwo.next;
   }
-  while(currentOne.next) {
-    newList.append(currentOne.value);
-    currentOne = currentOne.next;
-  }
-  while(currentTwo.next) {
-    newList.append(currentTwo.value);
-    currentTwo = currentTwo.next;
-  }
   newList.append(currentOne.value);
   newList.append(currentTwo.value);
+
+  if(list1.size > list2.size) {
+    currentOne = currentOne.next;
+    while(currentOne.next) {
+      newList.append(currentOne.value);
+      currentOne = currentOne.next;
+    }
+    newList.append(currentOne.value);
+  }
+
+  if(list2.size > list1.size) {
+    currentTwo = currentTwo.next;
+    while(currentTwo.next) {
+      newList.append(currentTwo.value);
+      currentTwo = currentTwo.next;
+    }
+    newList.append(currentTwo.value);
+  }
   
-  
+  console.log(newList.toString());
   return newList.head;
 }
 
