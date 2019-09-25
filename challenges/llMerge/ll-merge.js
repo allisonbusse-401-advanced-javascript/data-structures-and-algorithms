@@ -22,6 +22,14 @@ function mergeLists(list1, list2) {
   let currentOne = list1.head;
   let currentTwo = list2.head;
 
+  if(!list1.head) {
+    return list2.head;
+  }
+
+  if(!list2.head) {
+    return list1.head;
+  }
+
   while(currentOne.next !== null && currentTwo.next !== null) {
     newList.append(currentOne.value);
     newList.append(currentTwo.value);
@@ -49,7 +57,6 @@ function mergeLists(list1, list2) {
     newList.append(currentTwo.value);
   }
   
-  console.log(newList.toString());
   return newList.head;
 }
 

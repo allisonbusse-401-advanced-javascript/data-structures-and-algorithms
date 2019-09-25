@@ -53,4 +53,17 @@ describe('Merge Lists', () => {
     expect(result.next.next.next.next.next.next.next.value).toBe('work');
     expect(result.next.next.next.next.next.next.next.next.value).toBe('please');
   });
+
+  it('merges two lists when one list is empty', () => {
+    const list1 = new linkedListModel.LinkedList();
+    list1.insert(5);
+    list1.insert('hello');
+    list1.insert('no');
+
+    const list2 = new linkedListModel.LinkedList();
+    const result = mergeLists(list1, list2);
+    expect(result.value).toBe('no');
+    expect(result.next.value).toBe('hello');
+    expect(result.next.next.value).toBe(5);
+  });
 });
