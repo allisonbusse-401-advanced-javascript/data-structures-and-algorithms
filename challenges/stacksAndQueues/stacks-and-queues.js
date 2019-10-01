@@ -16,16 +16,16 @@ class Stack {
    */
   push(value) {
     const node = new Node(value);
-    if(!this.top) this.top = node;
+    if (!this.top) this.top = node;
     else {
       node.next = this.top;
       this.top = node;
-    } 
+    }
   }
 
   pop() {
     let result;
-    if(this.top) {
+    if (this.top) {
       result = this.top.value;
       this.top = this.top.next;
     }
@@ -44,13 +44,43 @@ class Queue {
   }
 
   enqueue(value) {
+    let newNode = new Node(value);
     let currentNode = this.front;
-    while(currentNode.next) {
-      currentNode = currentNode.next;
+    if(!currentNode) {
+      this.front = newNode;
     }
-    currentNode.next = new Node(value);
+    else {
+
+      while (currentNode.next) {
+        currentNode = currentNode.next;
+      }
+      currentNode.next = new Node(value);
+    }
+  }
+
+  dequeue() {
+    let currentNode = this.front;
+    let result;
+    if(!currentNode) {
+      return 'queue is empty';
+    } else {
+
+      result = currentNode.value;
+      this.front = currentNode.next;
+    }
+    return result;
+
+  }
+
+  peek() {
+    return this.front.value;
+
   }
 }
+
+
+  
+
 
 module.exports = {
   Node,

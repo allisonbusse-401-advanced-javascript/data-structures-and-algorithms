@@ -52,5 +52,50 @@ describe('Stacks and Queues', () => {
     expect(testStack.top).toBe(null);
   });
 
+  it('enqueues a new node into a queue', () => {
+    const newQueue = new Queue();
+    newQueue.enqueue('hello');
+    expect(newQueue.front.value).toBe('hello');
+  });
+
+  it('enqueues multiple nodes onto a queue', () => {
+    const newQueue = new Queue();
+    newQueue.enqueue('hello');
+    newQueue.enqueue('goodbye');
+    expect(newQueue.front.value).toBe('hello');
+    expect(newQueue.front.next.value).toBe('goodbye');
+  });
+
+  it('can dequeue the first node', () => {
+    const newQueue = new Queue();
+    newQueue.enqueue('hello');
+    newQueue.enqueue('goodbye');
+    const result = newQueue.dequeue();
+    expect(result).toBe('hello');
+  });
+
+  it('can empty a queue after several dequeues', () => {
+    const newQueue = new Queue();
+    newQueue.enqueue('hello');
+    newQueue.enqueue('goodbye');
+    newQueue.dequeue();
+    newQueue.dequeue();
+    const result = newQueue.dequeue();
+    expect(result).toBe('queue is empty');
+  });
+
+  it('can peek into a queue', () => {
+    const newQueue = new Queue();
+    newQueue.enqueue('hello');
+    newQueue.enqueue('goodbye');
+    const result = newQueue.peek();
+    expect(result).toBe('hello');
+  });
+
+  it('can instantiate a new queue', () => {
+    const newQueue = new Queue();
+    expect(newQueue.front).toBe(null);
+  });
+
 });
 
