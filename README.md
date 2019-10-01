@@ -3,4 +3,7 @@
 * [Array Shift] (./challenges/arrayShift/array-shift.js)
 * [Array Binary Search] (./challenges/arrayBinaryShift/array-binary-search.js)
 * [Linked Lists] (./challenges/linkedList/linked-list.js)
+* [Linked List Merge] (./challenges/llMerge/ll-merge.js)
+* [Stacks and Queues] (./challenges/stacksAndQueues/stacks-and-queues.s)
+* [Queue with Stacks] (./challenges/queueWithStacks/queue-with-stacks.js)
 
