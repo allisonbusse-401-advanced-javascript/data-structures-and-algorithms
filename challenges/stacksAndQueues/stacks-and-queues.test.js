@@ -1,4 +1,4 @@
-const { Node, Stack, Queue } = require('./stacks-and-queues');
+const { Stack, Queue } = require('./stacks-and-queues');
 
 describe('Stacks and Queues', () => {
   it('pushes a node onto the top of a stack', () => {
