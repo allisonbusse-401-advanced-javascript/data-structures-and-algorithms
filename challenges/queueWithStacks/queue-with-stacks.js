@@ -18,7 +18,13 @@ class PseudoQueue {
   }
 
   dequeue() {
-
+    while(this.inStack.top.next) {
+      this.outStack.push(this.inStack.pop());
+    }
+    this.inStack.pop();
+    while(this.outStack.peek()) {
+      this.inStack.push(this.outStack.pop());
+    }
   }
 }
 
