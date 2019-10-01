@@ -18,10 +18,11 @@ describe('Queue with Stacks Model', () => {
     pseudoQueue.inStack.push('hello');
     pseudoQueue.inStack.push('bye');
     pseudoQueue.inStack.push('maybe');
-    pseudoQueue.dequeue();
+    const result = pseudoQueue.dequeue();
     expect(pseudoQueue.inStack.top.value).toBe('maybe');
     expect(pseudoQueue.inStack.top.next.value).toBe('bye');
     expect(pseudoQueue.inStack.top.next.next).toBe(null);
+    expect(result.value).toBe('hello');
   });
 
 });

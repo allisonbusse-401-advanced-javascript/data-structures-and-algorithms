@@ -21,10 +21,12 @@ class PseudoQueue {
     while(this.inStack.top.next) {
       this.outStack.push(this.inStack.pop());
     }
+    let result = this.inStack.top;
     this.inStack.pop();
     while(this.outStack.peek()) {
       this.inStack.push(this.outStack.pop());
     }
+    return result;
   }
 }
 
