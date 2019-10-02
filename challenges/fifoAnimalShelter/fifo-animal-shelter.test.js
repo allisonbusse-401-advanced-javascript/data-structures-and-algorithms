@@ -1,5 +1,4 @@
 const { AnimalShelter } = require('./fifo-animal-shelter');
-const { Node } = require('../stacksAndQueues/stacks-and-queues');
 
 describe('Animal Shelter Model', () => {
   it('adds an animal to the appropriate queue', () => {
