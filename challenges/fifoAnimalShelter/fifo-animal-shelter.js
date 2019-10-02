@@ -15,20 +15,24 @@ class AnimalShelter {
   }
 
   enqueue(animal) {
-    if(animal.type === 'dog') {
+    if (animal.type === 'dog') {
       this.dogs.enqueue(animal.name);
     }
-    else if(animal.type === 'cat') {
+    else if (animal.type === 'cat') {
       this.cats.enqueue(animal.name);
     }
   }
 
   dequeue(pref) {
     if(pref === 'dog') {
-      return this.dogs.dequeue();
+      if(!this.dogs.peek()) return 'there are no more cats!';
+      if(this.dogs.peek()) return this.dogs.dequeue();
     }
-    else if(pref === 'cat') {
-      return this.cats.dequeue();
+    if(pref === 'cat') {
+      if(!this.cats.peek()) return 'there are no more cats!';
+      if(this.cats.peek()) {
+        return this.cats.dequeue();
+      }
     }
     else return null;
   }
