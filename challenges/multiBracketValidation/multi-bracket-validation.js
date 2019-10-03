@@ -49,11 +49,14 @@ function bracketValidator(input) {
 
 }
 
+module.exports = bracketValidator;
 
 
 
 
-console.log(bracketValidator('{(})'));
+
+
+
 // '{}' true
 // '{}(){}'	true
 // '()[[Extra Characters]]'	true
