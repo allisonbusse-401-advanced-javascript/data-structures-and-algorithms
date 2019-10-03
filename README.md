@@ -6,4 +6,6 @@
 * [Linked List Merge] (./challenges/llMerge/ll-merge.js)
 * [Stacks and Queues] (./challenges/stacksAndQueues/stacks-and-queues.s)
 * [Queue with Stacks] (./challenges/queueWithStacks/queue-with-stacks.js)
+* [Animal Shelter] (./challenges/fifoAnimalShelter/fifo-animal-shelter.js)
+* [Multi Bracket Validation] (./challenges/multiBracketValidation/multi-bracket-validation.js)
 
