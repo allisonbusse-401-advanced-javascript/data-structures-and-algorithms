@@ -28,7 +28,19 @@ class BinaryTree {
   postOrder() {
     return postOrderHelper(this.root, '').split('');
   }
+
+  findMaximum(root, result = []) {
+    if (root) {
+      result.push(root.value);
+      if (root.left) this.preOrder(root.left, result);
+      if (root.right) this.preOrder(root.right, result);
+    }
+    const max = Math.max.apply(Math.max, result);
+    return max;
+  }
+
 }
+
 
 function inOrderHelper(current, str) {
   if (current.left) str = inOrderHelper(current.left, str);
@@ -63,10 +75,10 @@ class BinarySearchTree {
 
 function containRecurse(value, currentNode) {
   let direction;
-  if(value === currentNode.value) return true;
+  if (value === currentNode.value) return true;
   if (value < currentNode.value) direction = 'left';
   else direction = 'right';
-  if (currentNode[direction]) return containRecurse(value, currentNode[direction]); 
+  if (currentNode[direction]) return containRecurse(value, currentNode[direction]);
   else return false;
 }
 
