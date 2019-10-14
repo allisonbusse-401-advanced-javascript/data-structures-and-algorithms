@@ -39,6 +39,24 @@ class BinaryTree {
     return max;
   }
 
+  breadthFirst(tree, queue = []) {
+    return breadthHelper(tree.root, queue, '');
+  }
+
+}
+
+function breadthHelper(root, queue, str) {
+  if(root) {
+    str += root.value;
+    if(root.left || root.right) {
+      if(root.left) queue.push(root.left);
+      if(root.right) queue.push(root.right);
+    }
+  }
+  while(queue.length > 0) {
+    str = breadthHelper(queue.shift(), queue, str);
+  }
+  return str;
 }
 
 
