@@ -34,6 +34,16 @@ class HashTable {
     if (existingIndex) bucket[existingIndex][1] = value;
     else bucket.push([key, value]);
   }
+
+  contains(key) {
+    const index = this.hash(key);
+    const bucket = this.array[index];
+    console.log(bucket);
+    const existingIndex = bucket.find(([storedKey]) => storedKey === key);
+    if(existingIndex) return true;
+    else return false;
+    
+  }
 }
 
 module.exports = HashTable;

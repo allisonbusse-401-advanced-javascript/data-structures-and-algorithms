@@ -18,5 +18,12 @@ describe('Hash Table Tests', () => {
     testTable.set('allison', 'smith');
     expect(testTable.get('allison')).toBe('smith');
   });
+
+  it('checks if a hash table contains a key', () => {
+    const testTable = new HashTable();
+    testTable.set('allison', 'smith');
+    expect(testTable.contains('allison')).toBe(true);
+    expect(testTable.contains('andy')).toBe(false);
+  });
 });
 
