@@ -36,7 +36,7 @@ describe('Tree Class', () => {
     tree.root.left.right.right = new Node('E');
     expect(tree.preOrder(tree.root)).toEqual(['F', 'B', 'A', 'D', 'C', 'E', 'G', 'I', 'H']);
 
-  });
+  }); 
 
   it('traverses a tree inorder', () => {
     const tree = new BinaryTree;
