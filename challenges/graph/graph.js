@@ -6,7 +6,6 @@ class Graph {
 
   addNode(value) {
     this.AdjList.set(value, []); 
-    return this.AdjList.keys().next().value;
   }
 
   addEdge(v, w) {

@@ -2,11 +2,11 @@ const Graph = require('./graph');
 
 describe('Testing Graph Class', () => {
   it('adds a node to a graph', () => {
-    const graph = new Graph();
+    const graph = new Graph(1);
     graph.addNode('A');
-    expect().toEqual('A');
+    expect(graph.getNodes()).toEqual(['A']);
   });
-  
+
 
   it('retrieves all nodes', () => {
     const graph = new Graph(6);
