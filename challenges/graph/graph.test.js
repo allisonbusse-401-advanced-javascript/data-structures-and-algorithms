@@ -6,6 +6,7 @@ describe('Testing Graph Class', () => {
     graph.addNode('A');
     expect().toEqual('A');
   });
+  
 
   it('retrieves all nodes', () => {
     const graph = new Graph(6);
